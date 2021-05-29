@@ -35,6 +35,12 @@ function CreateArea(props) {
     setIsClicked(true);
   }
 
+  function handleTitleEnter(event){
+    if(event.key === 'Enter'){
+      event.preventDefault();
+    }
+  }
+
   return (
     <div>
       <form className="create-note">
@@ -45,6 +51,7 @@ function CreateArea(props) {
               onChange={handleChange}
               value={note.title}
               placeholder="Title"
+              onKeyPress={handleTitleEnter}
             />
           </Zoom>
         )}
